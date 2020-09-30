@@ -1,6 +1,7 @@
 ﻿ 
+ 
 GO
-
+--comentario
 CREATE procedure [dbo].[proc_ins_marca]
 	@IdMarca	smallint	, 
 	@DescripcionMarca	varchar(85)	 ,
@@ -35,6 +36,6 @@ set @CodigoMarca=right('0000000'+cast(  @IdMarca as varchar(8)),8)
 		@fechaCreacion,
 		@NombreMarca
 	)
-
+	select @IdMarca
 end
 GO

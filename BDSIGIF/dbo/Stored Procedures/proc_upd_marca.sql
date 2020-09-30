@@ -1,5 +1,6 @@
 ﻿ 
 GO
+ 
 
 CREATE procedure [dbo].[proc_upd_marca]
 	@IdMarca	smallint	, 
@@ -21,6 +22,7 @@ DescripcionMarca	=@DescripcionMarca				  ,
 usuarioModificacion=@usuarioModificacion,					 
 EstadoRegistro=@EstadoRegistro						,
 fechaModificacion=	@fechaModificacion	
-where IdMarca=@IdMarca
+where IdMarca=@IdMarca;
+select @IdMarca
 end
 GO
