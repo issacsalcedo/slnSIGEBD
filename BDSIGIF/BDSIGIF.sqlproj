@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>BDSIGIF</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{3a65c9f9-5b92-4c0b-b38e-079231891e8e}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>BDSIGIF</RootNamespace>
+    <AssemblyName>BDSIGIF</AssemblyName>
+    <ModelCollation>3082,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Modern_Spanish_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Producto.sql" />
+    <Build Include="dbo\Tables\Almacen.sql" />
+    <Build Include="dbo\Tables\TiendaAlmacen.sql" />
+    <Build Include="dbo\Tables\Tienda.sql" />
+    <Build Include="dbo\Tables\Modelo.sql" />
+    <Build Include="dbo\Tables\Operacion.sql" />
+    <Build Include="dbo\Tables\DetalleOperacion.sql" />
+    <Build Include="dbo\Tables\Usuario.sql" />
+    <Build Include="dbo\Tables\Perfil.sql" />
+    <Build Include="dbo\Tables\Rol.sql" />
+    <Build Include="dbo\Tables\PerfilRol.sql" />
+    <Build Include="dbo\Tables\PerfilUsuario.sql" />
+    <Build Include="dbo\Tables\UsuarioTienda.sql" />
+    <Build Include="dbo\Tables\MovimientoProducto.sql" />
+    <Build Include="dbo\Tables\GestionCantidadDisponibleProducto.sql" />
+    <Build Include="dbo\Tables\Categoria.sql" />
+    <Build Include="dbo\Tables\Marca.sql" />
+    <Build Include="Security\visita.sql" />
+    <Build Include="Security\SISTEMAS-PC_SISTEMAS.sql" />
+    <Build Include="Security\IIS APPPOOL_SigeApp.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Functions\createInsertSP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_listar_categoria.sql" />
+    <Build Include="dbo\Stored Procedures\proc_listar_Marca.sql" />
+    <Build Include="dbo\Stored Procedures\proc_listar_Modelo.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ins_producto.sql" />
+    <Build Include="dbo\Stored Procedures\proc_act_producto.sql" />
+    <Build Include="dbo\Stored Procedures\proc_listar_producto.sql" />
+    <Build Include="dbo\Stored Procedures\PROC_UPD_CATEGORIA.sql" />
+    <Build Include="dbo\Stored Procedures\PROC_INS_CATEGORIA.sql" />
+    <Build Include="dbo\Stored Procedures\proc_upd_marca.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ins_marca.sql" />
+    <Build Include="dbo\Stored Procedures\proc_upd_Modelo.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ins_Modelo.sql" />
+  </ItemGroup>
+</Project>
