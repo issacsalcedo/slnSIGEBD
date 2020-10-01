@@ -1,7 +1,10 @@
-﻿
+﻿ 
+GO
+
 CREATE PROCEDURE [dbo].[PROC_UPD_CATEGORIA]
 	@IdCategoria			smallint	 ,
 	@DescripcionCategoria	varchar(85)	 ,
+	@NombreCategoria varchar(85)	 ,
 	@Codigo					char(8)	 ,
 	@EstadoRegistro			char(1)	 ,
 	@usuarioModificacion int
@@ -13,12 +16,13 @@ UPDATE Categoria
 SET 
 			 
 	DescripcionCategoria	=@DescripcionCategoria	,
-	Codigo					=@Codigo			,		
-	EstadoRegistro			=@EstadoRegistro	,
+ 	EstadoRegistro			=@EstadoRegistro	,
+	NombreCategoria=@NombreCategoria,
 	fechaModificacion=@fechaModificacion,
 	usuarioModificacion=@usuarioModificacion
 	where IdCategoria				=@IdCategoria	
  
  
- SELECT  @@ROWCOUNT
+ SELECT  @IdCategoria
 END 
+GO
